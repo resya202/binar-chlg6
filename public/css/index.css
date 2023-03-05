@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+}
+
+.action-logo {
+    width: 32px;
+    height: 32px;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    font-size: 16px;
+
+}
+
+table {
+    text-align: justify;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+th {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0062cc;
+}
+
+.btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.btn span {
+    vertical-align: middle;
+}

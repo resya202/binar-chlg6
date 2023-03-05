@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    font-size: 16px;
+}
+
+p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0062cc;
+}
+
+.btn span {
+    vertical-align: middle;
+}

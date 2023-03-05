@@ -1,0 +1,87 @@
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %>
+
+<main class="col-md-12 ms-sm-auto px-md-4">
+  <div class="pt-3 pb-2 mb-3">
+    <h1 class="h2">Welcome to the Dashboard, <%= session_username %></h1>
+  </div>
+  <div class="container mt-6">
+    <div>
+      <table class="table table-hover table-striped">
+        <% if (userGames.length > 0) { %>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+
+            <th>Biodata</th>
+            <th>Game History</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+          <% userGames.forEach(ug => { %>
+          <tr>
+            <td><%= ug.id %></td>
+            <td><%= ug.username %></td>
+            <td><%= ug.password %></td>
+            <td>
+              <% if (ug.userGameBiodatum) { %>
+              <ul>
+                <li><strong>Full Name:</strong> <%= ug.userGameBiodatum.dataValues.fullName %></li>
+                <li><strong>Email:</strong> <%= ug.userGameBiodatum.dataValues.email %></li>
+                <li><strong>Date of Birth:</strong>
+                  <%= ug.userGameBiodatum.dataValues.dateofbirth.toLocaleDateString() %></li>
+              </ul>
+              <% } else { %>
+              Data not found.
+              <% } %>
+            </td>
+            <td>
+              <% if (ug.userGameHistories.length > 0) { %>
+              <ul>
+                <% ug.userGameHistories.forEach(ugh => { %>
+                <li><strong>Game:</strong> <%= ugh.game.toUpperCase() %></li>
+                <ul>
+                  <li><strong>Score:</strong> <%= ugh.score %></li>
+                  <li><strong>Level:</strong> <%= ugh.level %></li>
+                  <li><strong>Last Login:</strong> <%= ugh.lastLogin.toLocaleDateString() %></li>
+                </ul>
+                <% }) %>
+              </ul>
+              <% } else { %>
+              Data not found.
+              <% } %>
+            </td>
+            <td>
+              <div class="btn-group">
+                <a href="/edit/<%= ug.id %>" class="btn">
+                  <img class="action-logo" src="./images/edit.png">
+                  <span>Edit</span>
+                </a>
+                <a href="/api/delete/<%= ug.id %>" class="btn">
+                  <img class="action-logo" src="./images/delete.png">
+                  <span>Delete</span>
+                </a>
+              </div>
+            </td>
+          </tr>
+          <% }) %>
+          <% } else { %>
+          Data not found.
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  </div>
+</main>
+</div>
+</div>
+
+
+<%- include('../partials/footer') %>

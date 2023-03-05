@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.background {
+    background-image: url('../images/login-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.logo-header {
+    width: 200px;
+    height: 180px;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+button {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+label {
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+button {
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+}
+
+.logo {
+    width: 28px;
+    height: 28px;
+}
